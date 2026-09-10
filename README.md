@@ -29,3 +29,9 @@ The scanner is local-only and uses synthetic fixtures. It does not scan real tar
 ## Evidence
 
 The report includes rule ID, severity, affected tool, sanitized evidence, remediation, check status, and audit fields. This is a bounded preflight, not a penetration test or certification.
+
+## Visual demo
+
+![MCP security preflight demo](assets/demo-screenshot.png)
+
+[Open the short GIF demo](assets/demo.gif)
