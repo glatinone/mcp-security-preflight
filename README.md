@@ -1,4 +1,4 @@
-# MCP Security Preflight
+﻿# MCP Security Preflight
 
 A local synthetic pre-release check for MCP tool metadata, permission scope, unsafe commands, secret-like values, tenant boundaries, approvals, and quotas.
 
@@ -35,3 +35,7 @@ The report includes rule ID, severity, affected tool, sanitized evidence, remedi
 ![MCP security preflight demo](assets/demo-screenshot.png)
 
 [Open the short GIF demo](assets/demo.gif)
+
+---
+
+Maintained by Kiell Tampubolon. More selected work at [kielltampubolon.id](https://www.kielltampubolon.id/).
