@@ -1,0 +1,17 @@
+MCP SECURITY PREFLIGHT
+$ python tests/run_stdlib.py
+PASS unsafe command
+PASS secret redaction
+PASS excessive scope
+PASS tainted input
+PASS tenant isolation
+PASS write requires approval
+PASS scoped approval allows write
+PASS quota
+PASS invalid target
+PASS end to end report
+PASS credential forwarding flagged
+PASS write without tenant scoping flagged
+SUMMARY passed=12 failed=0 total=12
+$ python benchmark/run_benchmark.py
+14/14 findings, 0 false positives, 6 rules covered
