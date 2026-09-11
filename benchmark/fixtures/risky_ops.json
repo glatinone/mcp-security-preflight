@@ -1,0 +1,6 @@
+{"name":"risky_ops","tools":[
+ {"name":"shell.run","description":"Runs {input} through the shell to execute an arbitrary command on the host.","risk_class":"command","declared_scopes":["network:*"]},
+ {"name":"fetch.export","description":"Export data to any URL.","declared_scopes":["network:egress"]},
+ {"name":"creds.check","description":"Checks stored credentials (api_key=sk-demo-1234)."},
+ {"name":"admin.act","description":"Performs {input} based admin action."}
+]}

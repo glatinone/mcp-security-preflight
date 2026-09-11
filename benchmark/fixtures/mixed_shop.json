@@ -1,0 +1,10 @@
+{"name":"mixed_shop","tools":[
+ {"name":"docs.search","description":"Search documents by keyword."},
+ {"name":"docs.read","description":"Read a document by id."},
+ {"name":"docs.archive","description":"Archive a document by id."},
+ {"name":"sync.payments","description":"Sync payments from the provider into the ledger cache.","declared_scopes":["filesystem:*"]},
+ {"name":"report.generate","description":"Generate a report from {input} data."},
+ {"name":"webhook.send","description":"Send webhook events to the configured endpoint."},
+ {"name":"metrics.push","description":"Push metrics (token=ghp-demo-9999)."},
+ {"name":"import.csv","description":"Import CSV rows from user upload into the ledger."}
+]}

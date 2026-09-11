@@ -1,8 +1,80 @@
 [
-  {"name":"documents.read","description":"Read documents for the authenticated tenant","risk_class":"read","declared_scopes":["tenant:read"],"source":"fixture"},
-  {"name":"shell.run","description":"Run shell command from user input","risk_class":"command","declared_scopes":["shell","network:*"],"source":"fixture","command":"bash -lc {input}"},
-  {"name":"files.export","description":"Export files to an arbitrary path","risk_class":"filesystem","declared_scopes":["filesystem:*","network:egress"],"source":"fixture","path":"/tmp/{input}"},
-  {"name":"documents.archive","description":"Archive a document after operator approval","risk_class":"write","declared_scopes":["tenant:write"],"source":"fixture"},
-  {"name":"search.query","description":"Search using external URL from input","risk_class":"network","declared_scopes":["network:egress"],"source":"fixture","url":"https://{input}"},
-  {"name":"config.inspect","description":"Inspect config with DEMO_API_KEY=sk-demo-secret-123","risk_class":"read","declared_scopes":["tenant:read"],"source":"fixture"}
+  {
+    "name": "documents.read",
+    "description": "Read documents for the authenticated tenant",
+    "risk_class": "read",
+    "declared_scopes": [
+      "tenant:read"
+    ],
+    "source": "fixture"
+  },
+  {
+    "name": "shell.run",
+    "description": "Run shell command from user input",
+    "risk_class": "command",
+    "declared_scopes": [
+      "shell",
+      "network:*"
+    ],
+    "source": "fixture",
+    "command": "bash -lc {input}"
+  },
+  {
+    "name": "files.export",
+    "description": "Export files to an arbitrary path",
+    "risk_class": "filesystem",
+    "declared_scopes": [
+      "filesystem:*",
+      "network:egress"
+    ],
+    "source": "fixture",
+    "path": "/tmp/{input}"
+  },
+  {
+    "name": "documents.archive",
+    "description": "Archive a document after operator approval",
+    "risk_class": "write",
+    "declared_scopes": [
+      "tenant:write"
+    ],
+    "source": "fixture"
+  },
+  {
+    "name": "search.query",
+    "description": "Search using external URL from input",
+    "risk_class": "network",
+    "declared_scopes": [
+      "network:egress"
+    ],
+    "source": "fixture",
+    "url": "https://{input}"
+  },
+  {
+    "name": "config.inspect",
+    "description": "Inspect config with DEMO_API_KEY=sk-demo-secret-123",
+    "risk_class": "read",
+    "declared_scopes": [
+      "tenant:read"
+    ],
+    "source": "fixture"
+  },
+  {
+    "name": "reports.push",
+    "description": "Push report to external dashboard using stored bearer header",
+    "risk_class": "write",
+    "declared_scopes": [
+      "network:egress"
+    ],
+    "source": "fixture",
+    "auth_header": "Bearer ey-demo-forwarded-token"
+  },
+  {
+    "name": "invoices.delete",
+    "description": "Delete an invoice record after approval",
+    "risk_class": "write",
+    "declared_scopes": [
+      "tenant:write"
+    ],
+    "source": "fixture"
+  }
 ]

@@ -37,5 +37,7 @@ def e2e():
  result=Preflight().run(); assert result['status']=='completed' and result['finding_count']>=4
  p=ROOT/'reports'/Path(result['report_path']).name; assert p.exists() and 'MCP-001' in p.read_text()
 test('end to end report',e2e)
+test('credential forwarding flagged',lambda: (_ for _ in ()).throw(AssertionError()) if not any(f.id=='MCP-005' for f in scan_tools(Fixture().tools)) else None)
+test('write without tenant scoping flagged',lambda: (_ for _ in ()).throw(AssertionError()) if not any(f.id=='MCP-006' for f in scan_tools(Fixture().tools)) else None)
 print(f'SUMMARY passed={passed} failed={failed} total={passed+failed}')
 raise SystemExit(1 if failed else 0)

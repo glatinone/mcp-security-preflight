@@ -1,0 +1,5 @@
+{"name":"safe_notes","tools":[
+ {"name":"notes.search","description":"Search user notes by keyword."},
+ {"name":"notes.read","description":"Read a single note by id."},
+ {"name":"notes.tag","description":"Add a tag to a note."}
+]}

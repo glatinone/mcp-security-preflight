@@ -1,0 +1,8 @@
+{"name":"payment_tools","tools":[
+ {"name":"charges.list","description":"List charges for the account."},
+ {"name":"refunds.create","description":"Create a refund for a charge."},
+ {"name":"export.ledger","description":"Export the full ledger to disk.","declared_scopes":["filesystem:*"]},
+ {"name":"payout.sync","description":"Sync payouts from {input} provider payload."},
+ {"name":"gateway.health","description":"Check gateway status (password=hunter2-demo)."},
+ {"name":"disputes.list","description":"List open disputes for the account."}
+]}

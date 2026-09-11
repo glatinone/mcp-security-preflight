@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-12",
+  "python": "3.12.10",
+  "repeats": 1000,
+  "rows": [
+    {
+      "fixture": "safe_notes",
+      "tools": 3,
+      "findings": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "median_us": 20.7,
+      "p95_us": 26.9
+    },
+    {
+      "fixture": "risky_ops",
+      "tools": 4,
+      "findings": 6,
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "median_us": 44.5,
+      "p95_us": 53.7
+    },
+    {
+      "fixture": "mixed_shop",
+      "tools": 8,
+      "findings": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "median_us": 68.7,
+      "p95_us": 87.1
+    },
+    {
+      "fixture": "payment_tools",
+      "tools": 6,
+      "findings": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "median_us": 54.3,
+      "p95_us": 118.9
+    }
+  ],
+  "aggregate": {
+    "tools": 21,
+    "findings": 12,
+    "true_positives": 12,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "detection_rate_pct": 100.0,
+    "rule_counts": {
+      "MCP-001": 1,
+      "MCP-002": 4,
+      "MCP-003": 3,
+      "MCP-004": 4
+    },
+    "median_scan_us_per_manifest": 49.4
+  }
+}
