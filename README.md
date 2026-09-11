@@ -1,4 +1,6 @@
-﻿# MCP Security Preflight
+# MCP Security Preflight
+
+![tests](https://github.com/glatinone/mcp-security-preflight/actions/workflows/tests.yml/badge.svg)
 
 A local synthetic pre-release check for MCP tool metadata, permission scope, unsafe commands, secret-like values, tenant boundaries, approvals, and quotas.
 
