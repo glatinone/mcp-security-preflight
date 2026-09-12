@@ -1,6 +1,6 @@
 {
   "date": "2026-09-12",
-  "python": "3.12.10",
+  "python": "3.13.12",
   "repeats": 1000,
   "rows": [
     {
@@ -10,8 +10,8 @@
       "tp": 0,
       "fp": 0,
       "fn": 0,
-      "median_us": 20.7,
-      "p95_us": 26.9
+      "median_us": 32.5,
+      "p95_us": 43.2
     },
     {
       "fixture": "risky_ops",
@@ -20,8 +20,8 @@
       "tp": 6,
       "fp": 0,
       "fn": 0,
-      "median_us": 44.5,
-      "p95_us": 53.7
+      "median_us": 72.3,
+      "p95_us": 107.6
     },
     {
       "fixture": "mixed_shop",
@@ -30,8 +30,8 @@
       "tp": 3,
       "fp": 0,
       "fn": 0,
-      "median_us": 68.7,
-      "p95_us": 87.1
+      "median_us": 111.5,
+      "p95_us": 166.4
     },
     {
       "fixture": "payment_tools",
@@ -40,14 +40,24 @@
       "tp": 3,
       "fp": 0,
       "fn": 0,
-      "median_us": 54.3,
-      "p95_us": 118.9
+      "median_us": 82.3,
+      "p95_us": 131.3
+    },
+    {
+      "fixture": "leaky_agent",
+      "tools": 3,
+      "findings": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "median_us": 89.1,
+      "p95_us": 100.4
     }
   ],
   "aggregate": {
-    "tools": 21,
-    "findings": 12,
-    "true_positives": 12,
+    "tools": 24,
+    "findings": 14,
+    "true_positives": 14,
     "false_positives": 0,
     "false_negatives": 0,
     "detection_rate_pct": 100.0,
@@ -55,8 +65,10 @@
       "MCP-001": 1,
       "MCP-002": 4,
       "MCP-003": 3,
-      "MCP-004": 4
+      "MCP-004": 4,
+      "MCP-005": 1,
+      "MCP-006": 1
     },
-    "median_scan_us_per_manifest": 49.4
+    "median_scan_us_per_manifest": 82.3
   }
 }

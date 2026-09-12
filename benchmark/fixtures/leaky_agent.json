@@ -1,0 +1,24 @@
+{
+  "name": "leaky_agent",
+  "description": "Fixture exercising MCP-005 credential key in metadata and MCP-006 tenant-unscoped write tool",
+  "tools": [
+    {
+      "name": "proxy.fetch",
+      "description": "Fetch a URL through the operator proxy and forward the stored session upstream",
+      "authorization": "{stored}",
+      "inputSchema": {"type": "object", "properties": {"url": {"type": "string"}}, "required": ["url"]}
+    },
+    {
+      "name": "admin.users.update",
+      "description": "Update a user record by id without a tenant context",
+      "risk_class": "write",
+      "inputSchema": {"type": "object", "properties": {"user_id": {"type": "string"}, "fields": {"type": "object"}}, "required": ["user_id"]},
+      "annotations": {"readOnlyHint": false}
+    },
+    {
+      "name": "notes.list",
+      "description": "List notes belonging to the caller",
+      "inputSchema": {"type": "object", "properties": {"tenant_id": {"type": "string"}}, "required": ["tenant_id"]}
+    }
+  ]
+}
