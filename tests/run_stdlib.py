@@ -39,5 +39,15 @@ def e2e():
 test('end to end report',e2e)
 test('credential forwarding flagged',lambda: (_ for _ in ()).throw(AssertionError()) if not any(f.id=='MCP-005' for f in scan_tools(Fixture().tools)) else None)
 test('write without tenant scoping flagged',lambda: (_ for _ in ()).throw(AssertionError()) if not any(f.id=='MCP-006' for f in scan_tools(Fixture().tools)) else None)
+def mcp007():
+ ids={(f.id,f.tool) for f in scan_tools(Fixture().tools)}
+ assert ("MCP-007","tenants.transfer") in ids, "must flag caller-supplied tenant_id"
+ assert ("MCP-007","tenants.lookup") not in ids, "must not flag IdP-resolved tenant"
+test('caller-controlled tenant identity flagged',mcp007)
+def mcp008():
+ ids={(f.id,f.tool) for f in scan_tools(Fixture().tools)}
+ assert ("MCP-008","sync.contacts") in ids, "must flag instruction-like description"
+ assert ("MCP-008","calendar.block") not in ids, "must not flag clean description"
+test('instruction-like description flagged',mcp008)
 print(f'SUMMARY passed={passed} failed={failed} total={passed+failed}')
 raise SystemExit(1 if failed else 0)

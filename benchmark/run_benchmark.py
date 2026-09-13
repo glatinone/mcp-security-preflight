@@ -22,7 +22,8 @@ EXPECTED = {
     "gateway.health": ["MCP-003"]},
   "leaky_agent": {
     "proxy.fetch": ["MCP-005"],
-    "admin.users.update": ["MCP-006"]},
+    "admin.users.update": ["MCP-006"],
+    "notes.list": ["MCP-007"]},
 }
 rows, rule_counts = [], {}
 tp_all = fp_all = fn_all = 0
