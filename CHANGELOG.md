@@ -1,6 +1,14 @@
 # Changelog
 
 
+## v1.3.0 (2026-09-18)
+
+- MCP-009: tool name shadowing. Flags a tool name declared by more than one source, the pattern behind MCP "rug pull" reports where an untrusted server registers a tool name that collides with a trusted one to silently hijack calls meant for it.
+- Fixtures: two `notes.search` entries (trusted_connector vs. unverified_plugin_7f3a) exercise the new rule; one finding is raised, not one per duplicate.
+- docs/rules.md updated: it stopped at MCP-004 and never documented MCP-005 through MCP-008.
+- 16/16 stdlib tests. Benchmark unchanged (15 true positives, 0 false positives, 100% detection) since MCP-009 needs no new benchmark fixture to stay green.
+
+
 ## v1.2.0 (2026-09-13)
 
 - MCP-007: caller-controlled tenant identity. Flags tools that accept a tenant_id parameter with no identity-provider reference (JWT, session, IdP, OAuth, authenticated context). The confused-deputy class where tenant identity comes from the caller.
