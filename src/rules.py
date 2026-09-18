@@ -44,6 +44,47 @@ def scan_tools(tools):
 
             out.append(Finding("MCP-006","medium",t["name"],"Write operation without tenant scoping",redact("write tool declares no tenant identifier"),"Require an explicit tenant_id argument and enforce it server-side."))
 
+    out.extend(_scan_shadowing(tools))
+
+    return out
+
+
+
+def _scan_shadowing(tools):
+
+    """MCP-009: the same tool name declared by more than one source.
+
+    A malicious or compromised MCP server can register a tool whose name
+    matches one already provided by a trusted source. Depending on load
+    order and client-side dedup, calls intended for the trusted tool can be
+    silently routed to the impostor instead (tool shadowing / rug pull).
+    """
+
+    out=[]
+
+    first_source_by_name={}
+
+    flagged_names=set()
+
+    for t in tools:
+
+        name=t.get("name")
+
+        if not name:
+            continue
+
+        source=t.get("source","unknown")
+
+        if name not in first_source_by_name:
+
+            first_source_by_name[name]=source
+
+        elif first_source_by_name[name]!=source and name not in flagged_names:
+
+            flagged_names.add(name)
+
+            out.append(Finding("MCP-009","high",name,"Tool name shadowed across sources",redact(f"tool '{name}' is declared by more than one source ({first_source_by_name[name]!r} and {source!r})"),"Namespace tool names per source (or reject the load) instead of letting two sources register the same tool name."))
+
     return out
 
 

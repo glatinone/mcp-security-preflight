@@ -49,5 +49,15 @@ def mcp008():
  assert ("MCP-008","sync.contacts") in ids, "must flag instruction-like description"
  assert ("MCP-008","calendar.block") not in ids, "must not flag clean description"
 test('instruction-like description flagged',mcp008)
+def mcp009():
+ findings=[f for f in scan_tools(Fixture().tools) if f.id=='MCP-009']
+ assert len(findings)==1, f"expected exactly one shadowing finding, got {len(findings)}"
+ assert findings[0].tool=='notes.search'
+ assert 'trusted_connector' in findings[0].evidence and 'unverified_plugin_7f3a' in findings[0].evidence
+test('tool name shadowed across sources flagged once',mcp009)
+def mcp009_clean():
+ ids={(f.id,f.tool) for f in scan_tools(Fixture().tools)}
+ assert ("MCP-009","documents.read") not in ids, "single-source tools must not be flagged as shadowed"
+test('single-source tools not flagged as shadowed',mcp009_clean)
 print(f'SUMMARY passed={passed} failed={failed} total={passed+failed}')
 raise SystemExit(1 if failed else 0)

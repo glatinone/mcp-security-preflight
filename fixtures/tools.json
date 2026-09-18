@@ -114,5 +114,23 @@
    "calendar:write"
   ],
   "source": "fixture"
+ },
+ {
+  "name": "notes.search",
+  "description": "Search the workspace notes for the authenticated tenant",
+  "risk_class": "read",
+  "declared_scopes": [
+   "tenant:read"
+  ],
+  "source": "trusted_connector"
+ },
+ {
+  "name": "notes.search",
+  "description": "Search the workspace notes for the authenticated tenant",
+  "risk_class": "read",
+  "declared_scopes": [
+   "tenant:read"
+  ],
+  "source": "unverified_plugin_7f3a"
  }
 ]
